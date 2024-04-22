@@ -92,20 +92,10 @@ function moveDecoration(event, element) {
   element.style.setProperty("--topmovement", offsetY + "px");
 }
 
-var tlbase = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".scroll-container",
-    start: "30% 0%",
-    end: "25% 0%",
-    markers: false,
-    scrub: true,
-  },
-});
-
 var tl1 = gsap.timeline({
   scrollTrigger: {
     trigger: ".scroll-container",
-    start: "25% 0%",
+    start: "15% 0%",
     end: "35% 0%",
     markers: false,
     scrub: true,
@@ -344,24 +334,6 @@ tl3.from(
   ".page-1 .bottom-right4",
   {
     right: "-100%",
-  },
-  "lemon"
-);
-
-var tl4 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".scroll-container",
-    start: "85% 0%",
-    end: "90% 100%",
-    markers: false,
-    scrub: true,
-  },
-});
-
-tl4.to(
-  "footer",
-  {
-    bottom: "0%",
   },
   "lemon"
 );
