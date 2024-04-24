@@ -25,8 +25,8 @@ function moveImage(event, element) {
   const middleX = window.innerWidth / 2;
   const middleY = window.innerHeight / 2;
 
-  const offsetX = (((x - middleX) / middleX) * Math.random() * 10) / 2;
-  const offsetY = (((y - middleY) / middleY) * Math.random() * 10) / 2;
+  const offsetX = ((x - middleX) / middleX) * 3;
+  const offsetY = ((y - middleY) / middleY) * 3;
 
   element.style.setProperty("--Leftmovement", offsetX + "px");
   element.style.setProperty("--topmovement", offsetY + "px");
