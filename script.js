@@ -11,42 +11,10 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 document.addEventListener("mousemove", (e) => {
-  const pre = document.querySelectorAll(".main-img");
-  const pre1 = document.querySelectorAll(".main-img2");
-  const pre2 = document.querySelectorAll(".main-img3");
-  const pre3 = document.querySelectorAll(".main-img4");
-  const text = document.querySelectorAll(".heading");
-  const text1 = document.querySelectorAll(".heading2");
-  const text2 = document.querySelectorAll(".heading3");
-  const text3 = document.querySelectorAll(".heading4");
-  const decoration = document.querySelectorAll(".decoration");
+  const pre = document.querySelectorAll(".hoverable-Element");
 
   pre.forEach((element) => {
     moveImage(e, element);
-  });
-  pre1.forEach((element) => {
-    moveImage(e, element);
-  });
-  pre2.forEach((element) => {
-    moveImage(e, element);
-  });
-  pre3.forEach((element) => {
-    moveImage(e, element);
-  });
-  text.forEach((element) => {
-    moveText(e, element);
-  });
-  text1.forEach((element) => {
-    moveText(e, element);
-  });
-  text2.forEach((element) => {
-    moveText(e, element);
-  });
-  text3.forEach((element) => {
-    moveText(e, element);
-  });
-  decoration.forEach((element) => {
-    moveDecoration(e, element);
   });
 });
 
@@ -57,36 +25,8 @@ function moveImage(event, element) {
   const middleX = window.innerWidth / 2;
   const middleY = window.innerHeight / 2;
 
-  const offsetX = ((x - middleX) / middleX) * 3;
-  const offsetY = ((y - middleY) / middleY) * 3;
-
-  element.style.setProperty("--Leftmovement", offsetX + "px");
-  element.style.setProperty("--topmovement", offsetY + "px");
-}
-
-function moveText(event, element) {
-  const x = event.clientX;
-  const y = event.clientY;
-
-  const middleX = window.innerWidth / 2;
-  const middleY = window.innerHeight / 2;
-
-  const offsetX = ((x - middleX) / middleX) * 5;
-  const offsetY = ((y - middleY) / middleY) * 5;
-
-  element.style.setProperty("--Leftmovement", offsetX + "px");
-  element.style.setProperty("--topmovement", offsetY + "px");
-}
-
-function moveDecoration(event, element) {
-  const x = event.clientX;
-  const y = event.clientY;
-
-  const middleX = window.innerWidth / 2;
-  const middleY = window.innerHeight / 2;
-
-  const offsetX = ((x - middleX) / middleX) * 1.5;
-  const offsetY = ((y - middleY) / middleY) * 1.5;
+  const offsetX = (((x - middleX) / middleX) * Math.random() * 10) / 2;
+  const offsetY = (((y - middleY) / middleY) * Math.random() * 10) / 2;
 
   element.style.setProperty("--Leftmovement", offsetX + "px");
   element.style.setProperty("--topmovement", offsetY + "px");
